@@ -1,4 +1,4 @@
-FROM node:18-slim
+FROM node:22-slim
 
 # Install Google Chrome Stable and required fonts
 RUN apt-get update \
