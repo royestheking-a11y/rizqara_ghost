@@ -125,29 +125,29 @@ function GhostScannerExperience() {
                 </div>
               </motion.div>
 
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 2 }}
-                className="text-white/40 font-mono text-sm tracking-[0.3em] uppercase"
-              >
-                Ghost Internet Intelligence
-              </motion.p>
-
               <motion.h1
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.5, delay: 0.5 }}
                 className="text-5xl md:text-7xl font-bold tracking-tighter"
               >
-                Expose the hidden web.
+                Ghost Internet Intelligence
               </motion.h1>
+
+              <motion.h2
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 2 }}
+                className="text-white/40 font-mono text-sm md:text-lg tracking-[0.2em] uppercase"
+              >
+                Expose Hidden Opportunities. Discover Business Growth.
+              </motion.h2>
               
-              <div className="h-12 flex items-center justify-center mt-6 text-white/60 font-mono text-sm md:text-base">
+              <motion.h3 className="h-12 flex items-center justify-center mt-6 text-white/60 font-mono text-sm md:text-base">
                  {showEnter && (
-                    <TypewriterText text="Automated B2B Lead Auditing. Extract hidden tech stacks, detect vulnerabilities, and generate high-ticket growth proposals instantly." />
+                    <TypewriterText text="AI-Powered Competitor Analysis, Technology Discovery & Lead Intelligence" />
                  )}
-              </div>
+              </motion.h3>
 
               {showEnter && (
                 <motion.div
