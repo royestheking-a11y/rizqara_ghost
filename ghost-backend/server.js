@@ -1,7 +1,7 @@
-const express = require('express');
-const cors = require('cors');
-const puppeteer = require('puppeteer');
-const cheerio = require('cheerio');
+import express from 'express';
+import cors from 'cors';
+import puppeteer from 'puppeteer';
+import * as cheerio from 'cheerio';
 
 const app = express();
 app.use(cors());
