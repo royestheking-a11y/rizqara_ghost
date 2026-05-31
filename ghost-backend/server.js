@@ -7,6 +7,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Health check endpoint for the self-ping system
+app.get('/', (req, res) => {
+    res.status(200).send('Ghost Backend is awake.');
+});
+
 app.post('/scan', async (req, res) => {
     try {
         const { url } = req.body;
@@ -258,4 +263,13 @@ Are you open to a brief 10-minute strategy call this week to discuss migrating y
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`Ghost Backend is running on port ${PORT}`);
+    
+    // Self-ping system to keep Render free tier awake
+    // Render goes to sleep after 15 minutes of inactivity. We ping every 14 minutes.
+    const pingUrl = 'https://rizqara-ghost.onrender.com';
+    setInterval(() => {
+        fetch(pingUrl)
+            .then(() => console.log('Self-ping successful. Server is awake.'))
+            .catch(err => console.error('Self-ping failed:', err.message));
+    }, 14 * 60 * 1000); // 14 minutes
 });
