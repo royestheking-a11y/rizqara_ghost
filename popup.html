@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Internet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <i data-lucide="ghost"></i>
+                </div>
+                <h1>Ghost Internet</h1>
+            </div>
+            <div class="logo-container" style="gap: 6px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
+                <i data-lucide="shield-check" style="width: 14px; color: #28a745;"></i>
+                SECURE
+            </div>
+        </header>
+
+        <button id="scanBtn" class="scan-btn">
+            <i data-lucide="zap"></i>
+            Run Intelligence Scan
+        </button>
+
+        <!-- New Vulnerability Score Header -->
+        <div id="vulnerabilityHeader" class="v-header" style="display: none;">
+            <div class="v-score">
+                <span id="vScoreText">--</span><span style="font-size: 1rem; color: #fff5;">/100</span>
+            </div>
+            <div class="v-label">VULNERABILITY SCORE</div>
+            <div class="v-bar"><div id="vBarFill" class="v-bar-fill"></div></div>
+        </div>
+
+        <div class="data-grid" id="dataGrid">
+            <div class="data-card">
+                <div class="badge" id="badge-revenue"></div>
+                <div class="card-label">Est. Revenue</div>
+                <div class="card-value" id="revenue">---</div>
+            </div>
+            <div class="data-card">
+                <div class="badge" id="badge-traffic"></div>
+                <div class="card-label">Traffic Channel</div>
+                <div class="card-value" id="traffic">---</div>
+            </div>
+            <div class="data-card">
+                <div class="badge" id="badge-seo"></div>
+                <div class="card-label">SEO Performance</div>
+                <div class="card-value" id="seo">---</div>
+            </div>
+            <div class="data-card">
+                <div class="badge active"></div>
+                <div class="card-label">Tech Architecture</div>
+                <div class="card-value" id="tech">---</div>
+            </div>
+        </div>
+
+        <div id="growthSection" class="section-card">
+            <div class="section-title">
+                <i data-lucide="rocket"></i>
+                Growth Attack Plan
+            </div>
+            <div id="growthPlan">
+                <!-- Items injected by JS -->
+            </div>
+        </div>
+
+        <div id="gapSection" class="section-card" style="background: #600; margin-top: -10px;">
+            <div class="section-title">
+                <i data-lucide="alert-octagon"></i>
+                Architectural Gaps
+            </div>
+            <div id="gapAnalysis">
+                <!-- Items injected by JS -->
+            </div>
+        </div>
+
+        <div class="data-grid" style="margin-top: 10px;">
+            <div id="competitorCard" class="data-card" style="display: none;">
+                <div class="card-label">Niche Competitors</div>
+                <div class="card-value" id="competitors" style="font-size: 0.9rem; color: var(--accent-maroon);">---</div>
+            </div>
+            <div id="emailCard" class="data-card" style="display: none;">
+                <div class="card-label">Extracted Contact</div>
+                <div class="card-value" id="extractedEmail" style="font-size: 0.9rem; color: #fff;">---</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="intelligence.js"></script>
+    <script src="popup.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
